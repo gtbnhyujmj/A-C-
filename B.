@@ -9,3 +9,4 @@ templates/proj.Nmae/base.html
 
 4. 建立邏輯view.py
 
+5. 註冊 app/urls
