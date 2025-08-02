@@ -1,6 +1,11 @@
-新增
+1. 新增
 
 static/css js images
 templates/proj.Nmae/base.html
 
-把 base.html的母版填入
+2. 把 base.html的母版填入
+
+3. 新增其他的.html
+
+4. 建立邏輯view.py
+
