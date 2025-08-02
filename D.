@@ -7,7 +7,7 @@ index===>>''
 app/urls
 from django.urls import path
 from . import views
-from .views import base_view
+from .views import base_view   <<<====這個神經病玩意別忘了寫
 
 urlpatterns = [
     path('', base_view, name='base'),
@@ -20,7 +20,7 @@ from django.shortcuts import render
 # Create your views here.
 # logout logic
 def base_view(request):
-    return render(request, 'index/base.html')
+    return render(request, 'index/base.html') <===資料夾名稱要打
 
 proj./urls
 
