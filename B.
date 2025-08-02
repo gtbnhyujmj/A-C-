@@ -2,3 +2,5 @@
 
 static/css js images
 templates/proj.Nmae/base.html
+
+把 base.html的母版填入
