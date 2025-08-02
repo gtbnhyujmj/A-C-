@@ -1,5 +1,7 @@
 0. cmd
-   └──
+   └──D:
+   mkdir vicent11
+   cd vicent11
 
 1. 建立虛擬環境
    └── python -m venv venv
