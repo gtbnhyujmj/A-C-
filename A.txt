@@ -13,8 +13,11 @@
    └── django-admin startproject main .
 
 4. 建立 App（例：accounts）
-   └── python manage.py startapp accounts
+   └── 
+   python manage.py startapp index
+   python manage.py startapp accounts
 
 5. 設定 sc/settings.py
+   INSTALLED_APPS += ['index']
    ├── INSTALLED_APPS += ['accounts']
 
