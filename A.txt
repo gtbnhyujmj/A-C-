@@ -1,12 +1,12 @@
 0. cmd
-   └──D:
-   mkdir vicent11
-   cd vicent11
+   └── D:
+   └── mkdir vicent11
+   └── cd vicent11
 
 1. 建立虛擬環境
    └── python -m venv venv
        └── venv/Scripts/activate (第一次用打這個)（Windows）
-           venv\Scripts\activate.bat (重開機後要打這個)
+           venv\Scripts\activate.bat (重開機後要打這個)(以後都打這個 不要上面那個)
 
 2. 安裝 Django
    └── pip install django
@@ -15,11 +15,13 @@
    └── django-admin startproject main .
 
 4. 建立 App（例：accounts）
-   └── 
-   python manage.py startapp index
-   python manage.py startapp accounts
+   └── python manage.py startapp index
+   └── python manage.py startapp accounts
+   └── ...
 
-5. 設定 sc/settings.py
-   INSTALLED_APPS += ['index']
-   ├── INSTALLED_APPS += ['accounts']
+===
 
+- cmd的部分finish.
+- 2025/08/06 已確認可無腦用
+
+===
