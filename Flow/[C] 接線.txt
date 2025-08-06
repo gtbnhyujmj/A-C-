@@ -1,0 +1,70 @@
+0. 建立邏輯處理 - [app]/views.py
+   - 先問GPT
+   - 最基本的模板在下面: 當使用者輸入某個網頁的路徑的時候，系統打開某個網頁給使用者看。(= python def.)
+
+    def base_view(request):
+        return render(request, '[index]/base.html')   <=== 記得 [APP. Name 要打上去，不然會掛掉。]
+
+===
+
+5. 註冊 [app]/urls.py
+   - 概念上跟上面差不多，只是上面的檔案放的是python def.的東西，所以他可以做很多事情。
+   - 這個檔案不處理任何邏輯的問題，他只處理路徑的問題，輸入哪個網址就打開哪個網址，就醬，沒更多功能。
+   - 他是完全空白的檔案，沒有任何設定。
+
+    from django.urls import path
+    from . import views
+    
+    from .views import base_view   <=== 通常會掛掉都是這個地方忘了再引用一次。
+
+    urlpatterns = [
+        path('', base_view, name='base'),
+    ]
+
+===
+
+6. 註冊 [proj.] / urls.py
+   - 這裡最容易忘記的是: include忘了寫。
+   - 你可以理解這個位置的urls.py跟上面的不同點在於: 這個位置的是 "總機"。
+
+   from django.contrib import admin
+   from django.urls import path, include   <=== include要引用，太容易忘了。
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('accounts/', include('accounts.urls')),
+   ]
+
+
+
+7. 處理資料表 ===>> model.py 寫class
+
+from django.db import models
+
+# Create your models here.
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+class CustomUser(AbstractUser):
+    # 如果要加欄位就在這裡加，例如：
+    phone = models.CharField(max_length=15, blank=True)
+    pass
+
+請打開你的 settings.py，然後確認有這一行（放在檔案中間即可）：
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+8. migration model
+
+python manage.py makemigrations
+   └── python manage.py migrate
+
+9. 建立超級使用者
+9. 建立 superuser（管理後台）
+   └── python manage.py createsuperuser
+
+===
+
+10. 啟動開發伺服器
+    └── python manage.py runserver
+
