@@ -18,7 +18,7 @@
     from .views import base_view   <=== 通常會掛掉都是這個地方忘了再引用一次。
 
     urlpatterns = [
-        path('', base_view, name='base'),   <=== 當網址都沒有的時候，執行views.py的base_view函式。
+        path('', base_view, name='base'),   <=== 當網址都沒有的時候，執行[views.py]的[base_view]函式。
         
         path('login/', login_view, name='login'),
         path('register/', register_view, name='register'),
@@ -35,42 +35,14 @@
 
    urlpatterns = [
        path('admin/', admin.site.urls),
-       path('', include('index.urls')),   <=== 當什麼都不打的時候 [= '']，去找[index]裡面的urls.py看資料。
+       path('', include('index.urls')),   <=== 當什麼都不打的時候 [= '']，去找[index]裡面的[urls.py]看資料。
        
        path('accounts/', include('accounts.urls')),   <=== 當網址有[accounts/]的時候，去找[accounts]裡面的urls.py看資料。
        path('phones/', include('phones.urls')),   <=== 類推。
    ]
 
-
-
-7. 處理資料表 ===>> model.py 寫class
-
-from django.db import models
-
-# Create your models here.
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-
-class CustomUser(AbstractUser):
-    # 如果要加欄位就在這裡加，例如：
-    phone = models.CharField(max_length=15, blank=True)
-    pass
-
-請打開你的 settings.py，然後確認有這一行（放在檔案中間即可）：
-
-AUTH_USER_MODEL = 'accounts.CustomUser'
-
-8. migration model
-
-python manage.py makemigrations
-   └── python manage.py migrate
-
-9. 建立超級使用者
-9. 建立 superuser（管理後台）
-   └── python manage.py createsuperuser
-
 ===
 
-10. 啟動開發伺服器
-    └── python manage.py runserver
+2025/08/06
 
+===
