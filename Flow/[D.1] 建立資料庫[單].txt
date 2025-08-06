@@ -32,7 +32,8 @@
 ===
 
 11. 啟動開發伺服器
-     python manage.py runserver
+     
+      python manage.py runserver
 
 ===
 
