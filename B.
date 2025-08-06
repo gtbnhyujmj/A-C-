@@ -1,12 +1,25 @@
-1. 新增
+0. 設定 main = (proj. Name) / settings.py
+   INSTALLED_APPS += ['index']
+   INSTALLED_APPS += ['accounts']
+   ...
 
-static/css js images
-templates/proj.Nmae/base.html
+===
 
-2. 把 base.html的母版填入
+1. 把基礎資料夾先複製好
+   
+   ex.
+    static/ [css js images]
+    templates/[APP. Nmae]/base.html
+
+===
+
+2. 把 base.html 填入母版用的程式碼
 
 3. 新增其他的.html
-隨便打個字在檔案了
+   - 隨便打個字在檔案
+   - 複製之前設計好的模板
+
+===
 
 4. 建立邏輯view.py
 先問GPT
