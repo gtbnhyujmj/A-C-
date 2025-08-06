@@ -7,7 +7,7 @@
 
 ===
 
-5. 註冊 [app]/urls.py
+5. 註冊 [app] / urls.py
    - 概念上跟上面差不多，只是上面的檔案放的是python def.的東西，所以他可以做很多事情。
    - 這個檔案不處理任何邏輯的問題，他只處理路徑的問題，輸入哪個網址就打開哪個網址，就醬，沒更多功能。
    - 他是完全空白的檔案，沒有任何設定。
@@ -32,7 +32,10 @@
 
    urlpatterns = [
        path('admin/', admin.site.urls),
-       path('accounts/', include('accounts.urls')),
+       path('', include('index.urls')),   <=== 當什麼都不打的時候 [= '']，去找[index]裡面的urls.py看資料。
+       
+       path('accounts/', include('accounts.urls')),   <=== 當網址有[accounts/]的時候，去找[accounts]裡面的urls.py看資料。
+       path('phones/', include('phones.urls')),   <=== 類推。
    ]
 
 
